@@ -16,12 +16,12 @@
   <meta name="author" content="max">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、毕奥-萨伐尔定律毕奥-萨伐尔定理(Biot-Savart Law)： 电流元$Id\vec{l}$ 在空间某点P处产生的磁感应强度$d\vec{B}$的大小与电流元$Id\vec{l}$的大小成正比，与电流元$Id\vec{l}$所在处到P点的位置矢量和电流元$Id\vec{l}$之间的夹角的正弦成正比，而与电流元$Id\vec{l}$ 到P点的距离的平方成反比。公式： $\vec{B}(\v">
+    <meta name="description" content="一、毕奥-萨伐尔定律 毕奥-萨伐尔定理(Biot-Savart Law)： 电流元$Id\vec{l}$ 在空间某点P处产生的磁感应强度$d\vec{B}$的大小与电流元$Id\vec{l}$的大小成正比，与电流元$Id\vec{l}$所在处到P点的位置矢量和电流元$Id\vec{l}$之间的夹角的正弦成正比，而与电流元$Id\vec{l}$ 到P点的距离的平方成反比。 公式： $\vec{B}(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="毕奥-萨伐尔定律与安培环路定律的思考">
 <meta property="og:url" content="http://example.com/2024/06/06/%E6%AF%95%E5%A5%A5-%E8%90%A8%E6%B3%95%E5%B0%94%E5%AE%9A%E5%BE%8B%E4%B8%8E%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E5%BE%8B%E7%9A%84%E6%80%9D%E8%80%83/index.html">
 <meta property="og:site_name" content="Max">
-<meta property="og:description" content="一、毕奥-萨伐尔定律毕奥-萨伐尔定理(Biot-Savart Law)： 电流元$Id\vec{l}$ 在空间某点P处产生的磁感应强度$d\vec{B}$的大小与电流元$Id\vec{l}$的大小成正比，与电流元$Id\vec{l}$所在处到P点的位置矢量和电流元$Id\vec{l}$之间的夹角的正弦成正比，而与电流元$Id\vec{l}$ 到P点的距离的平方成反比。公式： $\vec{B}(\v">
+<meta property="og:description" content="一、毕奥-萨伐尔定律 毕奥-萨伐尔定理(Biot-Savart Law)： 电流元$Id\vec{l}$ 在空间某点P处产生的磁感应强度$d\vec{B}$的大小与电流元$Id\vec{l}$的大小成正比，与电流元$Id\vec{l}$所在处到P点的位置矢量和电流元$Id\vec{l}$之间的夹角的正弦成正比，而与电流元$Id\vec{l}$ 到P点的距离的平方成反比。 公式： $\vec{B}(">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/06/06/%E6%AF%95%E5%A5%A5-%E8%90%A8%E6%B3%95%E5%B0%94%E5%AE%9A%E5%BE%8B%E4%B8%8E%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E5%BE%8B%E7%9A%84%E6%80%9D%E8%80%83/image.png">
 <meta property="article:published_time" content="2024-06-06T01:58:07.000Z">
@@ -318,28 +318,45 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、毕奥-萨伐尔定律"><a href="#一、毕奥-萨伐尔定律" class="headerlink" title="一、毕奥-萨伐尔定律"></a>一、毕奥-萨伐尔定律</h2><p><strong>毕奥-萨伐尔定理(Biot-Savart Law)</strong>： 电流元$Id\vec{l}$ 在空间某点P处产生的磁感应强度$d\vec{B}$的大小与电流元$Id\vec{l}$的大小成正比，与电流元$Id\vec{l}$所在处到P点的位置矢量和电流元$Id\vec{l}$之间的夹角的正弦成正比，而与电流元$Id\vec{l}$ 到P点的距离的平方成反比。<br>公式：<br> $\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \frac{I \, d\vec{\ell} \times \vec{r}}{|\vec{r}|^3}$</p>
-<p><strong>计算载流长直线导线产生的磁场</strong><br>题目：<br>如果在一段有限长直线电流旁边P点，距离直线电流直线距离为$a$，计算P点出的磁感应场强B</p>
+                <h2 id="一、毕奥-萨伐尔定律">一、毕奥-萨伐尔定律</h2>
+<p><strong>毕奥-萨伐尔定理(Biot-Savart Law)</strong>： 电流元$Id\vec{l}$ 在空间某点P处产生的磁感应强度$d\vec{B}$的大小与电流元$Id\vec{l}$的大小成正比，与电流元$Id\vec{l}$所在处到P点的位置矢量和电流元$Id\vec{l}$之间的夹角的正弦成正比，而与电流元$Id\vec{l}$ 到P点的距离的平方成反比。<br>
+公式：<br>
+$\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \frac{I , d\vec{\ell} \times \vec{r}}{|\vec{r}|^3}$</p>
+<p><strong>计算载流长直线导线产生的磁场</strong><br>
+题目：<br>
+如果在一段有限长直线电流旁边P点，距离直线电流直线距离为$a$，计算P点出的磁感应场强B</p>
 <p><img src="/2024/06/06/%E6%AF%95%E5%A5%A5-%E8%90%A8%E6%B3%95%E5%B0%94%E5%AE%9A%E5%BE%8B%E4%B8%8E%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E5%BE%8B%E7%9A%84%E6%80%9D%E8%80%83/image.png" srcset="/img/loading.gif" lazyload alt="题目如上"></p>
 <p>题目的解法也比较简单，主要是利用了换元然后积分的思想</p>
-<p>第一步：<br>$\frac{d\vec{y} \times \vec{r}}{r^3} = \frac{dy \cdot \sin \theta}{r^2} = \left( \frac{a}{\sin \theta} d\theta \right) \cdot \sin \theta \left( \frac{a}{\sin \theta} \right)^2 = \frac{\sin \theta d\theta}{a}$</p>
-<p>第二步：<br>$\frac{\mu_0}{4\pi} \int \frac{d\vec{y} \times \vec{r}}{r^3} = \frac{\mu_0 I}{4\pi a} \int_{\theta_1}^{\theta_2} \sin \theta d\theta$</p>
-<p>于是求完积分得到<br>$\frac{\mu_0}{4\pi} \int \frac{d\vec{y} \times \vec{r}}{r^3} = \frac{\mu_0 I}{4\pi a}(\cos \theta_1 - \cos \theta_2)$</p>
+<p>第一步：<br>
+$\frac{d\vec{y} \times \vec{r}}{r^3} = \frac{dy \cdot \sin \theta}{r^2} = \left( \frac{a}{\sin \theta} d\theta \right) \cdot \sin \theta \left( \frac{a}{\sin \theta} \right)^2 = \frac{\sin \theta d\theta}{a}$</p>
+<p>第二步：<br>
+$\frac{\mu_0}{4\pi} \int \frac{d\vec{y} \times \vec{r}}{r^3} = \frac{\mu_0 I}{4\pi a} \int_{\theta_1}^{\theta_2} \sin \theta d\theta$</p>
+<p>于是求完积分得到<br>
+$\frac{\mu_0}{4\pi} \int \frac{d\vec{y} \times \vec{r}}{r^3} = \frac{\mu_0 I}{4\pi a}(\cos \theta_1 - \cos \theta_2)$</p>
 <p>因为是无限长的直导线，所以可以近似取$\theta_1 = 0,theta_2 = \pi$</p>
 <p>于是得到最终表达式：</p>
 <p>$B = \frac{\mu_0 I}{2\pi a}$</p>
 <p>在学习这个定理的时候会很迷惑，这TM怎么推出来的这个定理，书上说，是由<strong>拉普拉斯</strong>抽象出来的，不愧是大神，NB</p>
-<p>但是在之后学习安培环路定理的时候，我发现无限长直导线推导出来的磁感应强度的公式同样也是<br>$B = \frac{\mu_0 I}{2\pi a}$<br>这不就相当于反过来论证了前面的定理的有效性</p>
-<h2 id="二、安培环路定理"><a href="#二、安培环路定理" class="headerlink" title="二、安培环路定理"></a>二、安培环路定理</h2><p><strong>安培环路定理</strong>：在真空的恒定磁场中，磁感强度B延任意闭合路径的积分的值，等于$\mu_0$乘以该闭合路径所包围的各电流的代数和<br>公式：</p>
+<p>但是在之后学习安培环路定理的时候，我发现无限长直导线推导出来的磁感应强度的公式同样也是<br>
+$B = \frac{\mu_0 I}{2\pi a}$<br>
+这不就相当于反过来论证了前面的定理的有效性</p>
+<h2 id="二、安培环路定理">二、安培环路定理</h2>
+<p><strong>安培环路定理</strong>：在真空的恒定磁场中，磁感强度B延任意闭合路径的积分的值，等于$\mu_0$乘以该闭合路径所包围的各电流的代数和<br>
+公式：</p>
 <p>$\oint \vec{B} \cdot d\vec{l} = \mu_0 \Sigma I$</p>
-<p>具体推导过程就不再赘述了，如果利用这个定理来求无线长直导线的磁场就手到擒来了<br>还是那上题来说<br>$\oint \vec{B} \cdot d\vec{l} = B \cdot 2\pi a =  \mu_0 I$</p>
+<p>具体推导过程就不再赘述了，如果利用这个定理来求无线长直导线的磁场就手到擒来了<br>
+还是那上题来说<br>
+$\oint \vec{B} \cdot d\vec{l} = B \cdot 2\pi a =  \mu_0 I$</p>
 <p>于是得到</p>
 <p>$B = \frac{\mu_0 I}{2\pi a}$</p>
-<h2 id="三、结论"><a href="#三、结论" class="headerlink" title="三、结论"></a>三、结论</h2><p><strong>安培环路定理(Ampère’s circuital law)</strong>和<strong>毕奥-萨伐尔定理(Biot-Savart law)</strong>是电磁学中描述磁场和电流关系的两个基本定律，它们在概念上是相互联系的。</p>
+<h2 id="三、结论">三、结论</h2>
+<p>**安培环路定理(Ampère’s circuital law)<strong>和</strong>毕奥-萨伐尔定理(Biot-Savart law)**是电磁学中描述磁场和电流关系的两个基本定律，它们在概念上是相互联系的。</p>
 <ol>
-<li><p>应用范围：安培环路定理适用于稳恒电流产生的磁场，而毕奥-萨伐尔定理适用于非稳恒电流产生的磁场。</p>
+<li>
+<p>应用范围：安培环路定理适用于稳恒电流产生的磁场，而毕奥-萨伐尔定理适用于非稳恒电流产生的磁场。</p>
 </li>
-<li><p>宏观与微观：安培环路定理通常用于宏观电流分布，而毕奥-萨伐尔定理用于计算微观电流元素产生的磁场。</p>
+<li>
+<p>宏观与微观：安培环路定理通常用于宏观电流分布，而毕奥-萨伐尔定理用于计算微观电流元素产生的磁场。</p>
 </li>
 </ol>
 
