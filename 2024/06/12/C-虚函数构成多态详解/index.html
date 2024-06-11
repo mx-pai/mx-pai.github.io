@@ -16,33 +16,24 @@
   <meta name="author" content="max">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言 中国互联网防火墙我们也都清楚，我们不能访问Youtube、Google、Twitter（X）这些国外网址，在日常中Github的使用都会受限制，我们就无法享受到自由的访问互联网资源，很多时候都吃“嗟来之食”，本文介绍我使用的梯子，利用代理服务来进行FQ。 代理商 Mitce 这个是梯子的节点代理商，本人也是尝试了很多不同的VPN和梯子，最终找到了这个价格低、速度快、节点多、使用方便的代理，点">
+    <meta name="description" content="为什么需要虚函数 12345678910111213141516171819202122232425262728#include &lt;iostream&gt;using namespace std;&#x2F;&#x2F;基类Baseclass Base&#123;public:    void func();    void func(int);&#125;;void Base::func()&#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梯子使用指南">
-<meta property="og:url" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:title" content="C++虚函数构成多态详解">
+<meta property="og:url" content="http://example.com/2024/06/12/C-%E8%99%9A%E5%87%BD%E6%95%B0%E6%9E%84%E6%88%90%E5%A4%9A%E6%80%81%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Max">
-<meta property="og:description" content="前言 中国互联网防火墙我们也都清楚，我们不能访问Youtube、Google、Twitter（X）这些国外网址，在日常中Github的使用都会受限制，我们就无法享受到自由的访问互联网资源，很多时候都吃“嗟来之食”，本文介绍我使用的梯子，利用代理服务来进行FQ。 代理商 Mitce 这个是梯子的节点代理商，本人也是尝试了很多不同的VPN和梯子，最终找到了这个价格低、速度快、节点多、使用方便的代理，点">
+<meta property="og:description" content="为什么需要虚函数 12345678910111213141516171819202122232425262728#include &lt;iostream&gt;using namespace std;&#x2F;&#x2F;基类Baseclass Base&#123;public:    void func();    void func(int);&#125;;void Base::func()&#123;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image.png">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image-1.png">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image2.png">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image3.png">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image4.png">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image5.png">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image6.png">
-<meta property="og:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/1717858901394.png">
-<meta property="article:published_time" content="2024-06-08T12:26:42.000Z">
-<meta property="article:modified_time" content="2024-06-08T15:14:55.566Z">
+<meta property="article:published_time" content="2024-06-11T23:54:11.000Z">
+<meta property="article:modified_time" content="2024-06-11T23:57:18.888Z">
 <meta property="article:author" content="max">
-<meta property="article:tag" content="工具">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>梯子使用指南 - Max</title>
+  <title>C++虚函数构成多态详解 - Max</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="梯子使用指南"></span>
+            <span id="subtitle" data-typed-text="C++虚函数构成多态详解"></span>
           
         </div>
 
@@ -252,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-08 20:26" pubdate>
-          2024年6月8日 晚上
+        <time datetime="2024-06-12 07:54" pubdate>
+          2024年6月12日 早上
         </time>
       </span>
     
@@ -264,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          1.3k 字
         
       </span>
     
@@ -275,7 +266,7 @@
         
         
         
-          16 分钟
+          12 分钟
         
       </span>
     
@@ -320,83 +311,63 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">梯子使用指南</h1>
+            <h1 id="seo-header">C++虚函数构成多态详解</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前言">前言</h2>
-<p>中国互联网防火墙我们也都清楚，我们不能访问Youtube、Google、Twitter（X）这些国外网址，在日常中Github的使用都会受限制，我们就无法享受到自由的访问互联网资源，很多时候都吃“嗟来之食”，本文介绍我使用的梯子，利用代理服务来进行FQ。</p>
-<h2 id="代理商">代理商</h2>
-<p><a target="_blank" rel="noopener" href="https://mitce.com/aff.php?aff=6185">Mitce</a><br>
-这个是梯子的节点代理商，本人也是尝试了很多不同的VPN和梯子，最终找到了这个价格低、速度快、节点多、使用方便的代理，点击<a target="_blank" rel="noopener" href="https://mitce.com/aff.php?aff=6185">Mitce</a>即可进入，下面是使用指南</p>
-<h3 id="Mitce使用指南">Mitce使用指南</h3>
-<ol>
-<li>注册<br>
-点击进去的首界面应该是这样的<br>
-<img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image.png" srcset="/img/loading.gif" lazyload alt="alt text"><br>
-如果英文界面使用不变的话，右上角可以切换中文，自行注册账号即可（邮箱注册）</li>
-<li>商品<br>
-直接点击商店选择自己要购买的套餐，个人套餐分为0.5刀和3刀两种套餐，0.5刀的是一个月100G流量，可供5台设备使用，带宽是1000Mbps，3刀的豪华款就是无限制流量和2000Mbps的带宽，我一般是用0.5刀（合人民币3.65￥）套餐，感觉是够用的，根据自己的需求选择，价格也不是很贵，可以先直接点击购买，方便后面的使用，当然你可以选择看完全文再考虑是否购买</li>
-<li>服务<br>
-购买之后，进入服务界面<br>
-<img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image-1.png" srcset="/img/loading.gif" lazyload alt="alt text">就可以看到自己的商品，点击管理进入商品详情页，这样能看到流量使用详情，直接向下滑动<br>
-<img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image2.png" srcset="/img/loading.gif" lazyload alt="alt text"><br>
-可以看到他们的使用文档，你可以使用，当然我这篇博客就是教你如何使用的，<br>
-看到下面的自动URL了吧，这个后面还有用，可以先复制</li>
-</ol>
-<h2 id="代理客户端">代理客户端</h2>
-<h3 id="Clash-Verge-AND-Clash-meta">Clash Verge AND Clash meta</h3>
-<p>购买完节点套餐，肯定用代理客户端来使用套餐，我尝试了几个不同的客户端，最后选择的是PC端的(点击即可进入，找到自己电脑的版本下载)<a target="_blank" rel="noopener" href="https://github.com/zzzgydi/clash-verge/releases/tag/v1.3.8">Clash Verge</a>和安卓手机端的(同上，下载apk文件)<a target="_blank" rel="noopener" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases/tag/v2.9.0">Clash Meta</a>，当然可能手机或者电脑会对软件尽享审查，无视风险继续安装即可（本人自己使用无碍，如果有问题，望君阅读文章末尾的免责声明），如果选择使用别的客户端请自行查阅指南，下面我会给出这两款的使用指南和问题处理，如果无法安装或者下载不成功等问题，可以评论区联系我或者发送邮件给<a href="mailto:3369437848@qq.com">Me</a>，有空会帮你解答</p>
-<h3 id="1-Clash-Verge-For-Windows">1.Clash Verge For Windows</h3>
-<ol>
-<li>设置<br>
-详细你已经下载完成，接下来就带你使用这款小猫咪软件<br>
-<img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image3.png" srcset="/img/loading.gif" lazyload alt="alt text">打开settings，可以先将Language改为中文，先别离开<img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image4.png" srcset="/img/loading.gif" lazyload alt="alt text">先将系统设置改为系统代理，下滑找到Clash内核，点击齿轮，更改为Clash meta，这样基本设置就已经完成</li>
-<li>订阅<br>
-打开订阅界面<img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image5.png" srcset="/img/loading.gif" lazyload alt="alt text">（还记得不）将刚才在Mitce购买的套餐地址粘贴然后导入，如果前面按照步骤来，应该会导入成功，如果有问题，和上面说法一样，联系我或者自行寻找答案。</li>
-<li>使用<br>
-订阅成功的话，你就可以成功使用梯子进行翻墙了，默认是自动选择节点，按照需求，依然可以自己在代理一行，手动更改节点（Tips：台湾&amp;香港速度快但是很多优有限制）</li>
-<li>关闭<br>
-关闭软件，需要在windous托盘关闭<img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/image6.png" srcset="/img/loading.gif" lazyload alt="alt text">直接叉掉是默认关不掉的</li>
-<li>问题<br>
-我用的时候一个最大的问题是关电脑时忘记关闭Clash，再次使用电脑时会连不上网，下面给出解决方案，如果对原因感兴趣的话自行搜索<br>
-解决方案：</li>
-</ol>
+                <h2 id="为什么需要虚函数">为什么需要虚函数</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">//基类Base</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">(<span class="hljs-type">int</span>)</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Base::func</span><span class="hljs-params">()</span></span>&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;void Base::func()&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Base::func</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span>&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;void Base::func(int)&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-comment">//派生类Derived</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Derived</span>: <span class="hljs-keyword">public</span> Base&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Derived::func</span><span class="hljs-params">()</span></span>&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;void Derived::func()&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    Base *p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Derived</span>();<br>    p -&gt; <span class="hljs-built_in">func</span>();  <span class="hljs-comment">//输出void Based::func()</span><br>    p -&gt; <span class="hljs-built_in">func</span>(<span class="hljs-number">10</span>);  <span class="hljs-comment">//输出void Base::func(int)</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以这个简单的继承关系来分析，派生类与基类存在一个同名成员函数<code>void fun()</code> 在main函数中，声明基类指针指向派生类的对象，那么在调用<code>p -&gt; fun()</code>会指向什么？<br>
+按照惯常的逻辑，指针指向派生类对象那应该调用的是派生类的成员函数和成员函数，但实际上输出的是基类的成员函数，也就是说，基类的指针无法直接访问派生类成员函数<br>
+那么如何让基类指针指向基类对象就使用基类的所有成员，指向派生类对象就使用派生类所有成员，也就是实现基类指针的多种形态，就是<strong>多态性</strong><br>
+就要利用虚函数，要在基类成员函数前加上<code>virtual</code>关键字</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span>;<br></code></pre></td></tr></table></figure>
+<p>这样的话，上述代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C++">p -&gt; <span class="hljs-built_in">func</span>();  <span class="hljs-comment">//输出void Derived::func()</span><br></code></pre></td></tr></table></figure>
+<p>C++虚函数的目的就是：可以通过基类指针对所有派生类（包括直接派生和间接派生）的成员变量和成员函数进行“全方位”的访问，尤其是成员函数。如果没有多态，我们只能访问成员变量。</p>
+<h2 id="虚析构函数的必要性">虚析构函数的必要性</h2>
+<p>学习虚函数时，书本上提到析构函数有时必须要声明为虚函数，这个必须是什么意思，让我百思不得其解<br>
+在查阅资料后，才知道这个是一种典型的内存泄露的问题</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">//基类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Base</span>();<br>    ~<span class="hljs-built_in">Base</span>();<br><span class="hljs-keyword">protected</span>:<br>    <span class="hljs-type">char</span> *str;<br>&#125;;<br>Base::<span class="hljs-built_in">Base</span>()&#123;<br>    str = <span class="hljs-keyword">new</span> <span class="hljs-type">char</span>[<span class="hljs-number">100</span>];<br>    cout&lt;&lt;<span class="hljs-string">&quot;Base constructor&quot;</span>&lt;&lt;endl;<br>&#125;<br>Base::~<span class="hljs-built_in">Base</span>()&#123;<br>    <span class="hljs-keyword">delete</span>[] str;<br>    cout&lt;&lt;<span class="hljs-string">&quot;Base destructor&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-comment">//派生类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Derived</span>: <span class="hljs-keyword">public</span> Base&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Derived</span>();<br>    ~<span class="hljs-built_in">Derived</span>();<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">char</span> *name;<br>&#125;;<br>Derived::<span class="hljs-built_in">Derived</span>()&#123;<br>    name = <span class="hljs-keyword">new</span> <span class="hljs-type">char</span>[<span class="hljs-number">100</span>];<br>    cout&lt;&lt;<span class="hljs-string">&quot;Derived constructor&quot;</span>&lt;&lt;endl;<br>&#125;<br>Derived::~<span class="hljs-built_in">Derived</span>()&#123;<br>    <span class="hljs-keyword">delete</span>[] name;<br>    cout&lt;&lt;<span class="hljs-string">&quot;Derived destructor&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>   Base *pb = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Derived</span>();<br>   <span class="hljs-keyword">delete</span> pb;<br>   cout&lt;&lt;<span class="hljs-string">&quot;==============&quot;</span>&lt;&lt;endl;<br>    Derived *pd = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Derived</span>();<br>    <span class="hljs-keyword">delete</span> pd;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个代码可以看到析构函数起到一个释放内存的作用，在对象的生命周期结束后会自动释放构造函数时分配的内存<br>
+可以看到main函数中用了两种方式创建派生类的对象</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C++">Base *pb = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Derived</span>();<br>Derived *pd = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Derived</span>();<br></code></pre></td></tr></table></figure>
+<p>那么运行结果是什么呢？</p>
 <blockquote>
-<p>打开控制面板—&gt;打开网络和Internet—&gt;打开Internet选项—&gt;点击上方连接—&gt;点击局域网设置—&gt;将勾选代理服务器一栏给取消然后点击确定—&gt;成功</p>
+<p>Base constructor<br>
+Derived constructor<br>
+Base destructor<br>
+==============<br>
+Base constructor<br>
+Derived constructor<br>
+Derived destructor<br>
+Base destructor</p>
 </blockquote>
-<h3 id="2-Clash-meta-For-Android">2.Clash meta For Android</h3>
+<p>delete pb只调用了基类的析构函数，这样就导致了创建的100个char类型的内存空间无法释放，就是典型的内存泄漏</p>
 <ol>
-<li>下载安装<br>
-详情见前文</li>
-<li>代理使用<br>
-直接点击Profile，然后右上方加号，再然后URL导入，复制粘贴购买的套餐地址</li>
-<li>使用<br>
-因为及其简单，就不再赘述（开箱即用了这）</li>
+<li>为什么delete基类指针没有调用派生类的析构函数？<br>
+因为编译器会根据指针类型来确认要调用的对象，所以不管它指向基类对象还是派生类的析构函数，始终调用基类构造函数</li>
+<li>为何delete派生类指针会同时调用两类的析构函数<br>
+因为这个是派生类的指针，会自动匹配到派生类的析构函数，在调用派生类析构函数会自动调用基类的析构函数<br>
+<strong>所以要声明虚析构函数</strong></li>
 </ol>
-<h2 id="后记">后记</h2>
-<p>仍记得第一次FQ看到外网的经历，让我很是害怕，但是回过头想想，我现在已经对事情有了自己的思考，并不会被人“牵着鼻子走”，但是如果没有墙的话，外网的某些事情确实会对中文互联网腐蚀，进而影响没有判断能力的未成年人，所以不可否认，互联网墙计划给我们千禧一代营造了一个虽然封闭但是很有保护的互联网环境，对于我来说，FQ目前是必须的（要不然博客都没法提交了……），但是一定要记住，<strong>我们不要被人当枪使，不管看到什么都要有独立且清醒的思考,For you，For me</strong><br>
-<a target="_blank" rel="noopener" href="https://sstrojan.com/hello-world/">一些别人写的注意事项</a>，</p>
-<hr>
-<p>如果文章对你有帮助的话，欢迎打赏(♥_♥)</p>
-<p><img src="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/1717858901394.png" srcset="/img/loading.gif" lazyload alt="微信打赏"></p>
-<h2 id="免责声明">免责声明</h2>
-<p>必须给自己叠几层甲，工具使用一定要符合规范。</p>
-<ol>
-<li>法律责任声明：<br>
-本文仅为提供技术信息和知识之用，不鼓励或支持任何违反当地法律法规的行为。读者需自行了解并遵守所在国家或地区的相关法律法规，因使用本文提及的技术和工具而引起的任何法律责任均由读者自行承担。</li>
-<li>安全风险声明：<br>
-使用代理工具可能会涉及数据隐私和安全风险。请确保使用可靠和信誉良好的服务提供商，妥善保护个人信息和隐私。因使用不安全的代理服务而导致的数据泄露或其他安全问题，本站概不负责。</li>
-<li>技术支持声明：<br>
-本文提供的设置和使用指南仅为一般性建议，可能因软件版本、服务提供商等因素而有所不同。如遇到具体技术问题，请联系相应的服务提供商或寻求专业技术支持。因使用本文提供的信息导致的任何问题或损失，本站概不负责。</li>
-<li>网络连通性声明：<br>
-由于网络环境和服务提供商的变化，翻墙工具的连接稳定性和有效性可能会有所波动。本站不对任何代理服务的持续可用性做出保证，因网络连接问题导致的任何不便或损失，本站概不负责。</li>
-<li>第三方链接声明：<br>
-本文可能包含指向第三方网站或服务的链接，这些链接仅为方便读者提供。本站对这些第三方网站或服务的内容、隐私政策或实践不承担任何责任。读者在访问和使用这些第三方网站或服务时，请自行承担风险。</li>
-<li>信息准确性声明：<br>
-本文中的信息力求准确和最新，但由于技术更新和政策变化，某些内容可能会过时或不准确。本站不对本文内容的准确性或完整性做出任何承诺或保证。读者应根据自身情况进行进一步研究和验证</li>
-</ol>
+<p>如果将基类的析构函数声明为虚函数，那么派生类的析构函数会成为虚函数，此时编译器就会忽略指针类型，会根据指针的指向来选择函数，这样一来指针都会指向派生类的对象，就能调用派生类的构造函数，继而调用基类的析构函数，这样就能解决内存泄露的问题</p>
+<h2 id="虚函数和虚继承的不同">虚函数和虚继承的不同</h2>
+<p>虚函数和虚继承完全是两种概念，千万不能当成同一类</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span> &#123;<br>    <span class="hljs-type">int</span> m_a;<br>&#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Left</span> : <span class="hljs-keyword">public</span> Base &#123; &#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Right</span> : <span class="hljs-keyword">public</span> Base &#123;<br>&#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Derived</span> : <span class="hljs-keyword">public</span> Left, <span class="hljs-keyword">public</span> Right &#123;<br> <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">seta</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span></span>&#123;m_a = a&#125;;<span class="hljs-comment">//命名冲突</span><br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>如果我要是在<code>Derived</code>类中使用<code>seta()</code>函数，就会报错，因为编译器不知道m_a从何继承而来，虚继承就可以解决命名冲突的问题，让派生类中只保留一份积累的成员变量<br>
+总结一下这两者的区别<br>
+<strong>虚继承：</strong></p>
+<ul>
+<li>虚继承是解决C++中多继承引起的钻石问题（Diamond Problem）的一种机制。</li>
+<li>当一个类通过虚继承从多个基类继承时，它只会包含一个基类的实例，避免了在对象内存模型中重复包含相同基类成员的问题。</li>
+<li>虚继承在类继承列表中使用 <code>virtual</code> 关键字声明，指示编译器使用虚继承。<br>
+<strong>虚函数：</strong></li>
+<li>虚函数是基类中声明的函数，用来允许派生类提供特定的实现。这是多态性实现的关键机制之一。</li>
+<li>虚函数使得可以通过基类指针或引用调用派生类中重写的函数。</li>
+<li>虚函数在基类中使用 <code>virtual</code> 关键字声明，在派生类中可以被重新定义</li>
+</ul>
 
                 
               </div>
@@ -405,11 +376,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7/" class="print-no-link">#工具</a>
+        <a href="/tags/C/" class="print-no-link">#C++</a>
       
     </div>
   
@@ -421,8 +413,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>梯子使用指南</div>
-      <div>http://example.com/2024/06/08/梯子使用指南/</div>
+      <div>C++虚函数构成多态详解</div>
+      <div>http://example.com/2024/06/12/C-虚函数构成多态详解/</div>
     </div>
     <div class="license-meta">
       
@@ -434,7 +426,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月8日</div>
+          <div>2024年6月12日</div>
         </div>
       
       
@@ -466,18 +458,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/12/C-%E8%99%9A%E5%87%BD%E6%95%B0%E6%9E%84%E6%88%90%E5%A4%9A%E6%80%81%E8%AF%A6%E8%A7%A3/" title="C++虚函数构成多态详解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++虚函数构成多态详解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/06/%E6%AF%95%E5%A5%A5-%E8%90%A8%E6%B3%95%E5%B0%94%E5%AE%9A%E5%BE%8B%E4%B8%8E%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E5%BE%8B%E7%9A%84%E6%80%9D%E8%80%83/" title="毕奥-萨伐尔定律与安培环路定律的思考">
-                        <span class="hidden-mobile">毕奥-萨伐尔定律与安培环路定律的思考</span>
+                      <a href="/2024/06/08/%E6%A2%AF%E5%AD%90%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="梯子使用指南">
+                        <span class="hidden-mobile">梯子使用指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
