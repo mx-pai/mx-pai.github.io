@@ -16,12 +16,12 @@
   <meta name="author" content="max">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近两周是程序设计实验周，现在过去了一周，这一周可谓是非常的烧脑，学习了很多算法的设计，这篇博客就作为，算法笔记的开篇 对于开发程序来说程序 &#x3D; 算法 + 数据结构算法对于程序员极其重要，这篇博客就依次记录一个经典的动态规划问题：  0&#x2F;1背包 给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高。  分析一下题目，每一件物体都有装和不装两个选项（这">
+    <meta name="description" content="最近两周是程序设计实验周，现在过去了一周，这一周可谓是非常的烧脑，学习了很多算法的设计，这篇博客就作为，算法笔记的开篇 对于开发程序来说程序 &#x3D; 算法 + 数据结构算法对于程序员极其重要，这篇博客就依次记录一个经典的动态规划问题：  0&#x2F;1背包给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高。  分析一下题目，每一件物体都有装和不装两个选项（这也">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01背包问题">
 <meta property="og:url" content="http://example.com/2024/05/24/01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Max">
-<meta property="og:description" content="最近两周是程序设计实验周，现在过去了一周，这一周可谓是非常的烧脑，学习了很多算法的设计，这篇博客就作为，算法笔记的开篇 对于开发程序来说程序 &#x3D; 算法 + 数据结构算法对于程序员极其重要，这篇博客就依次记录一个经典的动态规划问题：  0&#x2F;1背包 给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高。  分析一下题目，每一件物体都有装和不装两个选项（这">
+<meta property="og:description" content="最近两周是程序设计实验周，现在过去了一周，这一周可谓是非常的烧脑，学习了很多算法的设计，这篇博客就作为，算法笔记的开篇 对于开发程序来说程序 &#x3D; 算法 + 数据结构算法对于程序员极其重要，这篇博客就依次记录一个经典的动态规划问题：  0&#x2F;1背包给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高。  分析一下题目，每一件物体都有装和不装两个选项（这也">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/05/24/01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/image.png">
 <meta property="article:published_time" content="2024-05-24T14:11:05.000Z">
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"1LE2jQhaQYpPYWpgIWd3PPSM-gzGzoHsz","app_key":"zWSxnIJgfqEkBtxZLxBZnhQN","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"1LE2jQhaQYpPYWpgIWd3PPSM-gzGzoHsz","app_key":"zWSxnIJgfqEkBtxZLxBZnhQN","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -205,6 +205,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -321,8 +333,7 @@
                 <p>最近两周是程序设计实验周，现在过去了一周，这一周可谓是非常的烧脑，学习了很多算法的设计，这篇博客就作为，算法笔记的开篇</p>
 <p>对于开发程序来说<code>程序 = 算法 + 数据结构</code>算法对于程序员极其重要，这篇博客就依次记录一个经典的<strong>动态规划问题：</strong></p>
 <blockquote>
-<p><strong>0/1背包</strong><br>
-给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高。</p>
+<p><strong>0/1背包</strong><br>给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高。</p>
 </blockquote>
 <p>分析一下题目，每一件物体都有装和不装两个选项（这也是0/1的来源），如果暴力穷举的话，每一次都要去比较价值，就非常麻烦</p>
 <p>于是这题采用的算法思路是一个很经典的动态规划（dynamic programing）的思想</p>
@@ -331,11 +342,9 @@
 <p><code>dp[i][j]表示从下标0-i的物品取任意物品放进容积为j的背包的价值总和</code></p>
 <p>然后是推导<code>dp[i][j]</code>数组，已知每一个物体都有两种状态</p>
 <ul>
-<li>
-<p>如果不放这个物体，那就代表<code>dp[i][j] = dp[i-1][j]</code>,<code>i-1</code>就代表不放这第i的物体</p>
+<li><p>如果不放这个物体，那就代表<code>dp[i][j] = dp[i-1][j]</code>,<code>i-1</code>就代表不放这第i的物体</p>
 </li>
-<li>
-<p>如果放了这个物体呢，那么此时的背包价值<code>dp[i][j]</code>就可以用<code>dp[i-1][j-weight[i]]+value[i]</code>表示，这个含义就是放<code>i</code>这个物体的价值+背包容量变为<code>j-weight[i]</code>时的价值</p>
+<li><p>如果放了这个物体呢，那么此时的背包价值<code>dp[i][j]</code>就可以用<code>dp[i-1][j-weight[i]]+value[i]</code>表示，这个含义就是放<code>i</code>这个物体的价值+背包容量变为<code>j-weight[i]</code>时的价值</p>
 </li>
 </ul>
 <p>所以如果要找到最大价值可以调用C++中的<code>#include&lt;algorithm&gt;</code>中的<code>max函数</code></p>
