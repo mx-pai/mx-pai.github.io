@@ -16,12 +16,12 @@
   <meta name="author" content="max">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Windows系统下jupyter 后台启动与关闭目前我使用Jupyter notebook的频率很高，但是在终端打开后，命令行窗口要始终打开为了要让Jupyter notebook在后台运行，我又开始折腾了 Jupyter notebook启动一般是使用1jupyter notebookWIndows命令行提供了一个start命令1start &#x2F;b jupyter notebook这个命令就可以">
+    <meta name="description" content="Windows系统下jupyter 后台启动与关闭 目前我使用Jupyter notebook的频率很高，但是在终端打开后，命令行窗口要始终打开 为了要让Jupyter notebook在后台运行，我又开始折腾了 Jupyter notebook启动 一般是使用 1jupyter notebook WIndows命令行提供了一个start命令 1start &#x2F;b jupyter notebook">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows系统下jupyter 后台启动与关闭">
 <meta property="og:url" content="http://example.com/2024/07/28/win/index.html">
 <meta property="og:site_name" content="Max">
-<meta property="og:description" content="Windows系统下jupyter 后台启动与关闭目前我使用Jupyter notebook的频率很高，但是在终端打开后，命令行窗口要始终打开为了要让Jupyter notebook在后台运行，我又开始折腾了 Jupyter notebook启动一般是使用1jupyter notebookWIndows命令行提供了一个start命令1start &#x2F;b jupyter notebook这个命令就可以">
+<meta property="og:description" content="Windows系统下jupyter 后台启动与关闭 目前我使用Jupyter notebook的频率很高，但是在终端打开后，命令行窗口要始终打开 为了要让Jupyter notebook在后台运行，我又开始折腾了 Jupyter notebook启动 一般是使用 1jupyter notebook WIndows命令行提供了一个start命令 1start &#x2F;b jupyter notebook">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-28T06:14:31.000Z">
 <meta property="article:modified_time" content="2024-07-28T06:51:32.638Z">
@@ -267,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          459 字
+          462 字
         
       </span>
     
@@ -328,15 +328,36 @@
             
               <div class="markdown-body">
                 
-                <h2 id="Windows系统下jupyter-后台启动与关闭"><a href="#Windows系统下jupyter-后台启动与关闭" class="headerlink" title="Windows系统下jupyter 后台启动与关闭"></a>Windows系统下jupyter 后台启动与关闭</h2><p>目前我使用Jupyter notebook的频率很高，但是在终端打开后，命令行窗口要始终打开<br>为了要让Jupyter notebook在后台运行，我又开始折腾了</p>
-<h3 id="Jupyter-notebook启动"><a href="#Jupyter-notebook启动" class="headerlink" title="Jupyter notebook启动"></a>Jupyter notebook启动</h3><p>一般是使用<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">jupyter notebook<br></code></pre></td></tr></table></figure><br>WIndows命令行提供了一个<code>start</code>命令<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">start</span> /b jupyter notebook<br></code></pre></td></tr></table></figure><br>这个命令就可以让JupyterNotebook在后台运行,当前命令行窗口就可以关闭而不影响Jupyter的运行</p>
-<h2 id="查看启动项"><a href="#查看启动项" class="headerlink" title="查看启动项"></a>查看启动项</h2><p>你要想查看当前任务的启动情况,可以使用<code>tasklist</code>的命令<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">tasklist | <span class="hljs-built_in">findstr</span> &quot;jupyter&quot;<br></code></pre></td></tr></table></figure><br>此时就会输出相关信息<br>![[Pasted image 20240728101108.png]]</p>
-<h2 id="出现意外"><a href="#出现意外" class="headerlink" title="出现意外"></a>出现意外</h2><p>当我关闭窗口后,发现事情没有按照我想象中来进行,jupyter的服务进程还是被杀掉了,经过搜索<br>利用重定向输出和错误流到 <code>nul</code> 来避免这种情况。似乎可以.<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">start</span> /b jupyter notebook &gt;<span class="hljs-built_in">nul</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure><br>经过使用,发现了两个问题</p>
+                <h2 id="Windows系统下jupyter-后台启动与关闭">Windows系统下jupyter 后台启动与关闭</h2>
+<p>目前我使用Jupyter notebook的频率很高，但是在终端打开后，命令行窗口要始终打开<br>
+为了要让Jupyter notebook在后台运行，我又开始折腾了</p>
+<h3 id="Jupyter-notebook启动">Jupyter notebook启动</h3>
+<p>一般是使用</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">jupyter notebook<br></code></pre></td></tr></table></figure>
+<p>WIndows命令行提供了一个<code>start</code>命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">start</span> /b jupyter notebook<br></code></pre></td></tr></table></figure>
+<p>这个命令就可以让JupyterNotebook在后台运行,当前命令行窗口就可以关闭而不影响Jupyter的运行</p>
+<h2 id="查看启动项">查看启动项</h2>
+<p>你要想查看当前任务的启动情况,可以使用<code>tasklist</code>的命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">tasklist | <span class="hljs-built_in">findstr</span> &quot;jupyter&quot;<br></code></pre></td></tr></table></figure>
+<p>此时就会输出相关信息<br>
+![[Pasted image 20240728101108.png]]</p>
+<h2 id="出现意外">出现意外</h2>
+<p>当我关闭窗口后,发现事情没有按照我想象中来进行,jupyter的服务进程还是被杀掉了,经过搜索<br>
+利用重定向输出和错误流到 <code>nul</code> 来避免这种情况。似乎可以.</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">start</span> /b jupyter notebook &gt;<span class="hljs-built_in">nul</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<p>经过使用,发现了两个问题</p>
 <ol>
 <li>发现这个jupyter是与命令行窗口严格绑定的,关闭窗口jupyter服务就会关闭</li>
-<li>重定向输出到nul就无法看到日志情况,服务器密码都看不到了…<h3 id="暂时止步"><a href="#暂时止步" class="headerlink" title="暂时止步"></a>暂时止步</h3>先讲一下,前面的<code>start</code>命令打开jupyter之后,<code>tasklist</code>命令查看到进程ID,就可以主动用命令结束进程<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">taskkill</span> /F /PID &lt;PID&gt;<br></code></pre></td></tr></table></figure>
-将\<PID\>换成刚才查到的进程,就可以关闭了<h3 id="总结与回顾"><a href="#总结与回顾" class="headerlink" title="总结与回顾"></a>总结与回顾</h3>因为一个小想法让我陆陆续续整了一个上午,中间掺杂着很多<code>windows</code>的<code>cmd</code>命令,感觉和用<code>linux</code>的思路一样,但是<code>windows</code>的命令行日常使用并不多,接下来先在使用中熟悉<code>windows</code>的<code>cmd</code>命令<br>经过查阅,刚才失败的操作,似乎可以用<code>Doctor</code>部署,或者用<code>Powershell</code>设置进程,额,还挺烦的,再折腾折腾吧</PID\></li>
+<li>重定向输出到nul就无法看到日志情况,服务器密码都看不到了…</li>
 </ol>
+<h3 id="暂时止步">暂时止步</h3>
+<p>先讲一下,前面的<code>start</code>命令打开jupyter之后,<code>tasklist</code>命令查看到进程ID,就可以主动用命令结束进程</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">taskkill</span> /F /PID &lt;PID&gt;<br></code></pre></td></tr></table></figure>
+<p>将&lt;PID&gt;换成刚才查到的进程,就可以关闭了</p>
+<h3 id="总结与回顾">总结与回顾</h3>
+<p>因为一个小想法让我陆陆续续整了一个上午,中间掺杂着很多<code>windows</code>的<code>cmd</code>命令,感觉和用<code>linux</code>的思路一样,但是<code>windows</code>的命令行日常使用并不多,接下来先在使用中熟悉<code>windows</code>的<code>cmd</code>命令<br>
+经过查阅,刚才失败的操作,似乎可以用<code>Doctor</code>部署,或者用<code>Powershell</code>设置进程,额,还挺烦的,再折腾折腾吧</p>
 
                 
               </div>
